@@ -10,6 +10,7 @@ type FlexWrapperPropsType = {
   align?: 'center' | 'start' | 'end';
   wrap?: boolean;
   gap?: string;
+  flex?: string;
 };
 
 export const FlexWrapper = styled.div<FlexWrapperPropsType>`
@@ -20,6 +21,7 @@ export const FlexWrapper = styled.div<FlexWrapperPropsType>`
   align-items: ${(props) => props.align || 'stretch'};
   flex-wrap: ${(props) => (props.wrap ? 'wrap' : 'nowrap')};
   gap: ${(props) => (props.gap ? `${props.gap}px` : '0')};
+  flex: ${(props) => props.flex && props.flex};
   height: 100%;
   position: relative;
 `;
